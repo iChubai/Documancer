@@ -1,0 +1,48 @@
+{
+  "name": "documancer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/colors": "^7.2.1",
+    "@ant-design/icons": "^6.0.0",
+    "@ant-design/x": "^1.5.0",
+    "@langchain/community": "^0.3.49",
+    "@langchain/core": "^0.3.64",
+    "@langchain/openai": "^0.6.1",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/react-highlight-words": "^0.20.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "antd": "^5.26.5",
+    "date-fns": "^4.1.0",
+    "langchain": "^0.3.30",
+    "next": "15.4.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^5.3.93",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-dropzone": "^14.3.8",
+    "react-highlight-words": "^0.21.0",
+    "react-markdown": "^10.1.0",
+    "react-pdf": "^9.1.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

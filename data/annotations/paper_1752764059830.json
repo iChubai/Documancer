@@ -1,0 +1,15 @@
+{
+  "paperId": "paper_1752764059830",
+  "annotations": [
+    {
+      "id": "test-annotation-456",
+      "paperId": "paper_1752764059830",
+      "type": "highlight",
+      "content": "Test highlight annotation",
+      "pageNumber": 1,
+      "createdAt": "2025-07-17T14:54:59.027Z",
+      "updatedAt": "2025-07-17T14:54:59.027Z"
+    }
+  ],
+  "lastModified": "2025-07-17T14:54:59.027Z"
+}
