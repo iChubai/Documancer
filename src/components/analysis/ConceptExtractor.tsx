@@ -217,7 +217,6 @@ const ConceptExtractor: React.FC<ConceptExtractorProps> = ({
                     </Title>
                     <Tag 
                       color={getImportanceColor(concept.importance)}
-                      size="small"
                     >
                       {concept.importance}
                     </Tag>
@@ -249,7 +248,6 @@ const ConceptExtractor: React.FC<ConceptExtractorProps> = ({
                       {concept.relatedTerms.map((term, index) => (
                         <Tag 
                           key={index} 
-                          size="small" 
                           className="cursor-pointer hover:bg-blue-50"
                           onClick={() => setSearchTerm(term)}
                         >

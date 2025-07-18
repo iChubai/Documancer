@@ -193,6 +193,12 @@ async function testDatabaseOperations(): Promise<TestResult> {
       type: 'highlight' as const,
       content: 'Test annotation',
       pageNumber: 1,
+      position: {
+        x: 100,
+        y: 200,
+        width: 150,
+        height: 20
+      },
       createdAt: new Date(),
       updatedAt: new Date(),
     };

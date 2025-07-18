@@ -418,5 +418,18 @@
     "uploadedAt": "2025-07-17T15:09:11.578Z",
     "lastAccessedAt": "2025-07-17T15:09:11.578Z",
     "tags": []
+  },
+  {
+    "id": "paper_1752826301479",
+    "title": "This PDF document has been uploaded and processed. The content extraction is currently using a fallback method.",
+    "authors": [
+      "Document Content"
+    ],
+    "abstract": "This PDF document has been uploaded and processed. The content extraction is currently using a fallback method.",
+    "content": "Document Content\n\nThis PDF document has been uploaded and processed. The content extraction is currently using a fallback method.\n\nTitle: PDF Document\nPages: 1\nSize: 7634041 bytes\n\nThe document is ready for AI analysis and annotation.",
+    "filePath": "/api/files/1752826301479_2005.12872v3.pdf",
+    "uploadedAt": "2025-07-18T08:11:41.824Z",
+    "lastAccessedAt": "2025-07-18T08:11:41.824Z",
+    "tags": []
   }
 ]

@@ -105,6 +105,7 @@ export const ERROR_MESSAGES = {
   INVALID_FILE_TYPE: 'Only PDF files are supported',
   UPLOAD_FAILED: 'Failed to upload file. Please try again.',
   PROCESSING_FAILED: 'Failed to process the document',
+  IMPORT_FAILED: 'Failed to import data. Please check the file format.',
   API_ERROR: 'An error occurred while communicating with the server',
   NETWORK_ERROR: 'Network error. Please check your connection.',
   GENERIC_ERROR: 'An unexpected error occurred',

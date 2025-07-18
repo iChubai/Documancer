@@ -12,6 +12,11 @@ import {
   UserOutlined,
   BellOutlined,
   SearchOutlined,
+  RobotOutlined,
+  ClockCircleOutlined,
+  TeamOutlined,
+  ThunderboltOutlined,
+  ExperimentOutlined,
 } from '@ant-design/icons';
 import { useAppStore } from '@/store/useAppStore';
 import { VIEW_MODES } from '@/lib/constants';
@@ -69,6 +74,34 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       key: VIEW_MODES.ANALYSIS,
       icon: <BarChartOutlined />,
       label: 'Analysis',
+    },
+    {
+      type: 'divider' as const,
+    },
+    {
+      key: 'research-assistant',
+      icon: <RobotOutlined />,
+      label: 'Research Assistant',
+    },
+    {
+      key: 'paper-timeline',
+      icon: <ClockCircleOutlined />,
+      label: 'Paper Timeline',
+    },
+    {
+      key: 'collaboration-hub',
+      icon: <TeamOutlined />,
+      label: 'Collaboration Hub',
+    },
+    {
+      key: 'smart-insights',
+      icon: <ThunderboltOutlined />,
+      label: 'Smart Insights',
+    },
+    {
+      key: 'research-lab',
+      icon: <ExperimentOutlined />,
+      label: 'Research Lab',
     },
   ];
 

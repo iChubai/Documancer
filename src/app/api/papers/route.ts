@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readdir, readFile, stat } from 'fs/promises';
+import { readdir, readFile, stat, mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { Paper } from '@/lib/types';
 import { ERROR_MESSAGES } from '@/lib/constants';
@@ -20,12 +20,12 @@ async function loadPapers(): Promise<Paper[]> {
 async function savePapers(papers: Paper[]): Promise<void> {
   try {
     const dir = join(process.cwd(), 'data');
-    await readdir(dir).catch(() => {
+    await readdir(dir).catch(async () => {
       // Directory doesn't exist, create it
-      require('fs').mkdirSync(dir, { recursive: true });
+      await mkdir(dir, { recursive: true });
     });
     
-    await require('fs').promises.writeFile(
+    await writeFile(
       PAPERS_STORAGE_PATH, 
       JSON.stringify(papers, null, 2)
     );

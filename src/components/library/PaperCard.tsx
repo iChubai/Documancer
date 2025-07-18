@@ -48,8 +48,8 @@ const PaperCard: React.FC<PaperCardProps> = ({
     setIsFavorite(!isFavorite);
   };
 
-  const handleDownload = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleDownload = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     // In a real implementation, you would download the PDF
     const link = document.createElement('a');
     link.href = paper.filePath;
@@ -57,10 +57,30 @@ const PaperCard: React.FC<PaperCardProps> = ({
     link.click();
   };
 
-  const handleShare = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleShare = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     // In a real implementation, you would implement sharing functionality
     navigator.clipboard.writeText(`Check out this paper: ${paper.title}`);
+  };
+
+  const handleMenuClick = (key: string) => {
+    switch (key) {
+      case 'view':
+        onView(paper);
+        break;
+      case 'edit':
+        onEdit?.(paper);
+        break;
+      case 'download':
+        handleDownload();
+        break;
+      case 'share':
+        handleShare();
+        break;
+      case 'delete':
+        onDelete?.(paper);
+        break;
+    }
   };
 
   const menuItems = [
@@ -68,25 +88,21 @@ const PaperCard: React.FC<PaperCardProps> = ({
       key: 'view',
       label: 'View Paper',
       icon: <EyeOutlined />,
-      onClick: () => onView(paper),
     },
     {
       key: 'edit',
       label: 'Edit Details',
       icon: <EditOutlined />,
-      onClick: () => onEdit?.(paper),
     },
     {
       key: 'download',
       label: 'Download PDF',
       icon: <DownloadOutlined />,
-      onClick: handleDownload,
     },
     {
       key: 'share',
       label: 'Share',
       icon: <ShareAltOutlined />,
-      onClick: handleShare,
     },
     {
       type: 'divider' as const,
@@ -96,7 +112,6 @@ const PaperCard: React.FC<PaperCardProps> = ({
       label: 'Delete',
       icon: <DeleteOutlined />,
       danger: true,
-      onClick: () => onDelete?.(paper),
     },
   ];
 
@@ -142,7 +157,7 @@ const PaperCard: React.FC<PaperCardProps> = ({
           />
         </Tooltip>,
         <Dropdown 
-          menu={{ items: menuItems }}
+          menu={{ items: menuItems, onClick: ({ key }) => handleMenuClick(key) }}
           trigger={['click']}
           key="more"
         >
@@ -233,7 +248,6 @@ const PaperCard: React.FC<PaperCardProps> = ({
           {paper.tags.slice(0, 3).map((tag) => (
             <Tag 
               key={tag} 
-              size="small" 
               color="blue"
               className="cursor-pointer hover:bg-blue-100"
               onClick={(e) => {
@@ -245,7 +259,7 @@ const PaperCard: React.FC<PaperCardProps> = ({
             </Tag>
           ))}
           {paper.tags.length > 3 && (
-            <Tag size="small" className="cursor-pointer">
+            <Tag className="cursor-pointer">
               +{paper.tags.length - 3}
             </Tag>
           )}

@@ -13,6 +13,7 @@ import { Paper } from '@/lib/types';
 import FileUpload from '@/components/upload/FileUpload';
 import { LibraryViewSkeleton } from '@/components/common/LoadingStates';
 import PaperCard from '@/components/library/PaperCard';
+import ExportImportPanel from '@/components/library/ExportImportPanel';
 import { VIEW_MODES } from '@/lib/constants';
 import { usePapers } from '@/hooks/usePapers';
 
@@ -164,6 +165,19 @@ const LibraryView: React.FC = () => {
           <FileUpload onUploadSuccess={handleUploadSuccess} />
         </Card>
       )}
+
+      {/* Export/Import Panel */}
+      <Row gutter={[16, 16]} className="mb-6">
+        <Col xs={24} lg={8}>
+          <ExportImportPanel 
+            onImportComplete={(result) => {
+              console.log('Import completed:', result);
+              // Refresh papers list after import
+              window.location.reload();
+            }}
+          />
+        </Col>
+      </Row>
 
       {/* Papers Grid */}
       {paginatedPapers.length === 0 ? (
